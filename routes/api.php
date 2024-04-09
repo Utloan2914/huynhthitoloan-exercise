@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,3 +23,6 @@ use App\Http\Controllers\PostController;
 
 Route::get('/people', [PersonController::class, 'getInfo']);
 Route::get('/posts', [PostController::class, 'getPost']);
+Route::resource('students', StudentController::class);
+
+Route::get('students/phnom-penh-older-than-20', [StudentController::class, 'getStudentsFromPhnomPenhOlderThan20']);
