@@ -23,6 +23,7 @@ use App\Http\Controllers\StudentController;
 
 Route::get('/people', [PersonController::class, 'getInfo']);
 Route::get('/posts', [PostController::class, 'getPost']);
-Route::resource('students', StudentController::class);
 
+Route::put('students/{student}', [StudentController::class, 'update']);
+Route::delete('students/{student}', [StudentController::class, 'destroy']);
 Route::get('students/phnom-penh-older-than-20', [StudentController::class, 'getStudentsFromPhnomPenhOlderThan20']);
